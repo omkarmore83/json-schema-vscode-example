@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "$schema": {
+            "type": "string"         
+        }
+    },
+    "patternProperties": {
+        "Questions_(EN|DE)$": {
+            "$ref" : "#/definitions/questions-schema"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "questions-schema": {
+            "type":"array",
+            "items": {
+                "$ref" : "#/definitions/question-schema"
+            }
+        },
+        "question-schema": {
+            "properties": {
+                "question" : {
+                    "type": "string"
+                },
+                "option_1": {
+                    "$ref": "#/definitions/option-schema"       
+                },
+                "option_2": {
+                    "$ref": "#/definitions/option-schema"       
+                },
+                "option_3": {
+                    "$ref": "#/definitions/option-schema"       
+                },
+                "option_4": {
+                    "$ref": "#/definitions/option-schema"       
+                },
+                "correct_option": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4
+                },
+                "moreInfo": {
+                    "type": "string"
+                },
+                "level": {
+                    "type": "integer"
+                },
+                "category": {
+                    "$ref": "#/definitions/category-schema"
+                },
+                "multimedia": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/multimedia-item-schema"
+                    }
+                }
+            },
+            "required":[
+                "question",
+                "option_1",
+                "option_2",
+                "option_3",
+                "option_4",
+                "correct_option"                
+            ],
+            "additionalProperties": false
+        },
+        "category-schema": {
+            "enum": [
+                "GEOGRAPHY",
+                "HISTORY",
+                "MATH",
+                "CURRENT_AFFAIRS"
+            ]
+        },
+        "multimedia-item-schema": {
+            "type": "object",
+            "properties": {
+                "id" : {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "path"
+            ],
+            "additionalProperties": false
+        },
+        "option-schema": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "image": {
+                            "type" : "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

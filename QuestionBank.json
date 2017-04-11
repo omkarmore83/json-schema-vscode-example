@@ -1,0 +1,54 @@
+{
+    "$schema": "./QuestionBank-schema.json",    
+    "Questions_EN" : [
+        {
+            "question" : "Which is the largest continent in the world!",
+            "option_1" : "Asia",
+            "option_2" : "Africa",
+            "option_3" : "Antartica",
+            "option_4" : "Europe",
+            "correct_option" : 1,
+            "moreInfo" : "Asia is X sq meters in area",
+            "category": "GEOGRAPHY",
+            "level" : 3
+        },
+        {
+            "question" : "Who is the person in the picture?",
+            "option_1": {
+                "image" : "mtx1"
+            },
+            "option_2": {
+                "image" : "mtx2"
+            },
+            "option_3": {
+                "image" : "mtx3"
+            },
+            "option_4": {
+                "image" : "mtx4"
+            },
+            "correct_option" : 1,
+            "multimedia" : [
+                {
+                    "id" : "mtx1",
+                    "type" : "image",
+                    "path" : "https://someimageserver.com/image12.png"
+                },
+                {
+                    "id" : "mtx2",
+                    "type" : "image",
+                    "path" : "https://someimageserver.com/image13.png"
+                },
+                {
+                    "id" : "mtx3",
+                    "type" : "image",
+                    "path" : "https://someimageserver.com/image14.png"
+                },
+                {
+                    "id" : "mtx4",
+                    "type" : "image",
+                    "path" : "https://someimageserver.com/image15.png"
+                }                
+            ]
+        }
+    ]
+}
